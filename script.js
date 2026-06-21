@@ -1,8 +1,8 @@
 let model;
 let classNames = ["Flood", "Non Flood"];
 
-const MODEL_URL = "./tfjs_model/model.json";
-const CLASS_NAMES_URL = "./tfjs_model/class_names.json";
+const MODEL_URL = "./model.json";
+const CLASS_NAMES_URL = "./class_names.json";
 
 async function loadClassNames() {
   try {
