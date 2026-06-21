@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flood Image Classification | SDG 11 & 13</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div class="badge">SDG 11 · SDG 13 · Disaster Risk Reduction</div>
+      <h1>Flood Image Classification</h1>
+      <p>
+        Upload gambar kondisi lingkungan, lalu model CNN akan mengklasifikasikan apakah gambar tersebut menunjukkan kondisi
+        <b>Flood</b> atau <b>Non Flood</b>.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="upload-area" id="dropArea">
+        <input type="file" id="imageUpload" accept="image/*" hidden />
+        <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">
+          Pilih Gambar
+        </button>
+        <p>atau drag and drop gambar ke sini</p>
+      </div>
+
+      <div class="preview-wrapper">
+        <img id="previewImage" alt="Preview image" />
+      </div>
+
+      <button id="predictButton" class="predict-btn" onclick="predictImage()" disabled>
+        Predict Flood Status
+      </button>
+
+      <div class="result-box">
+        <h2 id="result">Loading model...</h2>
+        <p id="confidence">Mohon tunggu sampai model siap digunakan.</p>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div>
+        <h3>Tujuan</h3>
+        <p>Membantu memilah gambar banjir dan non-banjir dari laporan lapangan, CCTV, atau dokumentasi publik.</p>
+      </div>
+      <div>
+        <h3>Relevansi SDGs</h3>
+        <p>Mendukung pemantauan bencana dan ketahanan kota terhadap risiko iklim.</p>
+      </div>
+      <div>
+        <h3>Input Gambar</h3>
+        <p>Gunakan gambar jalan tergenang, permukiman banjir, sungai meluap, atau area normal tanpa banjir.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
